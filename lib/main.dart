@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infinity_coffee_shop/pages/home.dart';
+import 'package:infinity_coffee_shop/pages/landingPage.dart';
 
 void main() {
   runApp(const MyApp());

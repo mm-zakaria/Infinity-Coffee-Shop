@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,56 +12,136 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
+        padding: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("images/coffee.png"),
-            Text(
-              "Order your favorite coffee...",
-              style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              "why are you late",
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.black45,
-              ),
-            ),
-            SizedBox(height: 100.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.only(left: 30, right: 20, top: 10, bottom: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10.0),
-                      topLeft: Radius.circular(10.0),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Next",
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset(
+                          "images/wave.png",
+                          height: 30.0,
+                          width: 30.0,
+                          fit: BoxFit.cover,
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Text(
+                          "Hey Jack",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      "Find Your Favorite Coffee",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black45,
                       ),
-                      Icon(Icons.arrow_forward_ios),
-                    ],
+                    ),
+                  ],
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    "images/boy.jpg",
+                    height: 60,
+                    width: 60,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 20.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Search Coffee",
+                    suffixIcon: Icon(
+                      Icons.search_outlined,
+                      color: Colors.black,
+                    )),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Top Item",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "see all",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              height: 250,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(color: Colors.grey),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Cappuccino",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "\$250 bdt",
+                          style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Image.asset(
+                          "images/capa.png",
+                          height: 150,
+                          width: 170,
+                          fit: BoxFit.cover,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
