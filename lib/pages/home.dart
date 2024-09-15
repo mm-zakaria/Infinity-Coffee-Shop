@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:infinity_coffee_shop/pages/details.dart';
+import 'package:infinity_coffee_shop/pages/landingPage.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -12,6 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 207, 201, 224),
       body: Container(
         padding: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
         child: Column(
@@ -112,31 +115,108 @@ class _HomeState extends State<Home> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
+                  //for(int i=0;i<=10;i++)
+                  InkWell(
+                    onTap: () {
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Details()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.blueGrey,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Cappuccino",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "\$250 bdt",
+                            style: TextStyle(
+                                color: Colors.black45,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Image.asset(
+                            "images/capa.png",
+                            height: 150,
+                            width: 170,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
                   Container(
-                    decoration: BoxDecoration(color: Colors.grey),
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey,
+                        borderRadius: BorderRadius.circular(20)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Cappuccino",
+                          "Black Coffee",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "\$250 bdt",
+                          "\$150 bdt",
                           style: TextStyle(
                               color: Colors.black45,
                               fontSize: 18.0,
                               fontWeight: FontWeight.bold),
                         ),
                         Image.asset(
-                          "images/capa.png",
+                          "images/black.png",
                           height: 150,
                           width: 170,
                           fit: BoxFit.cover,
-                        )
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.blueGrey,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Latte",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "\$350 bdt",
+                          style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Image.asset(
+                          "images/latte.png",
+                          height: 150,
+                          width: 170,
+                          fit: BoxFit.cover,
+                        ),
                       ],
                     ),
                   ),

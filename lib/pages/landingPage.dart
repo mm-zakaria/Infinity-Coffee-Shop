@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinity_coffee_shop/pages/home.dart';
 
 class Landingpage extends StatefulWidget {
   const Landingpage({super.key});
@@ -37,27 +38,35 @@ class _HomeState extends State<Landingpage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.only(left: 30, right: 20, top: 10, bottom: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10.0),
-                      topLeft: Radius.circular(10.0),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Next",
-                        style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Home()));
+                  },
+                  child: Container(
+                    padding:
+                        EdgeInsets.only(left: 30, right: 20, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(10.0),
+                        topLeft: Radius.circular(10.0),
                       ),
-                      Icon(Icons.arrow_forward_ios),
-                    ],
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Next",
+                          style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    ),
                   ),
                 ),
               ],

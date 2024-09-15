@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinity_coffee_shop/pages/details.dart';
 import 'package:infinity_coffee_shop/pages/home.dart';
 import 'package:infinity_coffee_shop/pages/landingPage.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Home(),
+      home: Landingpage(),
     );
   }
 }
