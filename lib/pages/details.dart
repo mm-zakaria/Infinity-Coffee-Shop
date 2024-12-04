@@ -72,7 +72,7 @@ class _DetailsState extends State<Details> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10.0),
                         decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(10)),
@@ -82,7 +82,7 @@ class _DetailsState extends State<Details> {
                         ),
                       ),
                       SizedBox(
-                        width: 20.0,
+                        width: 30.0,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,10 +111,10 @@ class _DetailsState extends State<Details> {
                   Row(
                     children: [
                       Text(
-                        "Price : \$250bdt",
+                        "Price :250 taka",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 30.0,
+                            fontSize: 25.0,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
